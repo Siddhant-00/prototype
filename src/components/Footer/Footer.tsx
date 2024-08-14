@@ -33,7 +33,7 @@ function Footer() {
 
           <div className={`transform transition-transform duration-1000  ${isVisible ? 'translate-y-0' : 'translate-y-full'}`}>
             <h1 className='font-bold text-md text-white mt-4 lg:mt-2'>Add & Phone</h1>
-            <p className='text-sm font-light mt-2'>123, Katanki, Jabalpur, Madhaya Pradesh</p>
+            <p className='text-sm font-light mt-2'>123, Katangi, Jabalpur, Madhaya Pradesh</p>
             <p className='text-sm font-light mt-1 hover:text-amber-300 hover:underline'>+91-9109348376</p>
           </div>
           <div className={`transform transition-transform duration-1000 mt-2 lg:mt-0 ${isVisible ? 'translate-y-0' : 'translate-y-full'}`}>
