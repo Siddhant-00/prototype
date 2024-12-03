@@ -1,68 +1,37 @@
 'use client'
-import React, { useEffect, useState } from 'react'
-import Link from 'next/link'
+import React from 'react'
+import { motion } from 'framer-motion'
+import {  Github, Linkedin, Mail } from 'lucide-react'
 
-function Footer() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, []);
-
+const Footer = () => {
   return (
-    <div className='min-h-[16vh] w-full mx-auto  bg-gray-800 text-white pt-3'>
-      {/* <div className='w-[90%] mx-auto border-t border-gray-50 px-4 lg:px-10' /> */}
-      <div className={`transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-        <div className='flex flex-col md:flex-row w-full justify-evenly p-3 pt-3 lg:ml-8 lg:mt-3'>
-
-          <div className={`transform transition-transform duration-1000  ${isVisible ? 'translate-y-0' : 'translate-y-full'}`}>
-            <h1 className='font-bold text-md text-white mt-2'>Quick Links</h1>
-            <Link href={'/resume'} className='pr-4 text-sm font-light mt-1 hover:text-amber-300 hover:underline'>
-              Resume
-            </Link>
-            <Link href={'/projects'} className='pr-4 text-sm font-light mt-1 hover:text-amber-300 hover:underline'>
-              Projects
-            </Link>
-            <Link href={'/contact'} className='pr-4 text-sm font-light mt-1 hover:text-amber-300 hover:underline'>
-              Contact
-            </Link>
+    <div>
+       <section id="contact" className="text-center bg-gray-500">
+          <h2 className="text-3xl font-bold mb-4 pt-6 text-white">Get In Touch</h2>
+          <p className="text-xl text-gray-300 mb-8">
+            I'm always open to new opportunities and collaborations.
+          </p>
+          <div className="flex justify-center space-x-6 pb-10">
+            {[
+              { icon: Github, href: 'https://github.com/Siddhant-00', label: 'GitHub' },
+              { icon: Linkedin, href: 'https://www.linkedin.com/in/siddhant-jain-a5159425b/', label: 'LinkedIn' },
+              { icon: Mail, href: 'mailto:siddhantjain6810@gmail.com', label: 'Email' },
+            ].map(({ icon: Icon, href, label }) => (
+              <motion.a
+                key={label}
+                href={href}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-white p-4 rounded-full shadow-md hover:shadow-lg transition-shadow"
+              >
+                <Icon className="h-6 w-6 text-gray-600" />
+                <span className="sr-only">{label}</span>
+              </motion.a>
+            ))}
           </div>
-
-          <div className={`transform transition-transform duration-1000  ${isVisible ? 'translate-y-0' : 'translate-y-full'}`}>
-            <h1 className='font-bold text-md text-white mt-4 lg:mt-2'>Add & Phone</h1>
-            <p className='text-sm font-light mt-2'>123, Katangi, Jabalpur, Madhaya Pradesh</p>
-            <p className='text-sm font-light mt-1 hover:text-amber-300 hover:underline'>+91-9109348376</p>
-          </div>
-          <div className={`transform transition-transform duration-1000 mt-2 lg:mt-0 ${isVisible ? 'translate-y-0' : 'translate-y-full'}`}>
-            <h1 className='font-bold text-md text-white mt-2'>Email</h1>
-            <p className='cursor-pointer hover:underline text-sm font-light hover:text-amber-300 mt-2'>siddhantjain6810@gmail.com</p>
-          </div>
-          <div className={`transform transition-transform duration-1000 mt-2 lg:mt-0 ${isVisible ? 'translate-y-0' : 'translate-y-full'}`}>
-            <h1 className='font-bold text-md text-white mt-2'>Connect With Me</h1>
-            <div className='flex gap-x-4 lg:gap-x-2 items-center lg:justify-between mt-2'>
-              <div className='github'>
-                <Link href={'https://github.com/Siddhant-00'} target='_blank' className='text-sm font-light hover:text-amber-300 hover:underline'>Github</Link>
-              </div>
-              <div className='LinkedIn'>
-                <Link href={'https://www.linkedin.com/in/siddhant-jain-a5159425b/'} target='_blank' className='text-sm font-light hover:text-amber-300 hover:underline'>LinkedIn</Link>
-              </div>
-              <div className='X'>
-                <Link href={'https://x.com/_siddhant_00'} target='_blank' className='text-sm font-light hover:text-amber-300 hover:underline'>X</Link>
-              </div>
-            </div>
-          </div>
-          <div>
-            <h1></h1>
-            <p></p>
-          </div>
-        </div>
-      </div>
+        </section>
     </div>
   )
 }
 
 export default Footer
-
