@@ -20,7 +20,7 @@ export default function Home() {
             className="md:w-1/2"
           >
             <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-amber-600 to-orange-600 text-transparent bg-clip-text">
-              Hi, I'm <span className="font-serif">Siddhant Jain</span>
+              Hi, I&apos;m <span className="font-serif">Siddhant Jain</span>
             </h1>
             <p className="text-xl font-bold text-blue-900 mb-6">
               A passionate computer science student specializing in artificial intelligence and machine learning.

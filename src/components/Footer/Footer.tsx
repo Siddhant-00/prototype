@@ -10,7 +10,7 @@ const Footer = () => {
       <section id="contact" className="text-center bg-gray-500">
         <h2 className="text-3xl font-bold mb-4 pt-6 text-white">Get In Touch</h2>
         <p className="text-xl text-gray-300 mb-8">
-          I'm always open to new opportunities and collaborations.
+          I&apos;m always open to new opportunities and collaborations.
         </p>
         <div className="flex justify-center space-x-6 pb-10">
           {[
