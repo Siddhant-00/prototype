@@ -57,6 +57,12 @@ function Navbar() {
                   Contact
                 </span>
               </Link>
+              <span className='border-r-2 border-gray-600'></span>
+              <Link href={'/submission'}>
+                <span className="inline-block text-blue-600 px-2.5 duration-400 ease-in-out hover:cursor-pointer hover:text-amber-800 transition-all hover:ease-in">
+                  Data Science Submission
+                </span>
+              </Link>
             </div>
           </div>
         </div>
@@ -86,6 +92,12 @@ function Navbar() {
               <Link href={'/contact'}>
                 <span onClick={closeSidebar} className="block px-2.5 py-2 duration-400 ease-in-out hover:cursor-pointer hover:text-amber-800 transition-all hover:ease-in">
                   Contact
+                </span>
+              </Link>
+              <span className='border-b-2 border-gray-600'></span>
+              <Link href={'/submission'}>
+                <span onClick={closeSidebar} className="block text-blue-600 px-2.5 py-2 duration-400 ease-in-out hover:cursor-pointer hover:text-amber-800 transition-all hover:ease-in">
+                  Data Science Submission
                 </span>
               </Link>
             </div>
