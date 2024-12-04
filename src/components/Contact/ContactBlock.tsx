@@ -143,6 +143,7 @@ function ContactBlock() {
           </div>
         </div>
         <ToastContainer />
+        <ToastContainer />
       </div>
     </>
   );
