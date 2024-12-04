@@ -1,65 +1,71 @@
-"use client"
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
+import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import axios from "axios";
 
 function ContactBlock() {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    message: ''
+    firstName: "",
+    lastName: "",
+    email: "",
+    message: "",
   });
 
-  const handleChange = (e: any) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+    setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formData);
+    console.log("Submitting form data:", formData);
+
     try {
       const res = await axios.post("/api/mail", formData);
 
-
       if (res.status === 200) {
-        toast.success("Email sent successfully!", {
-        });
+        toast.success("Email sent successfully!");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          message: "",
+        }); // Reset form after success
       } else {
-        toast.error("Failed to send email.", {
-        });
+        toast.error("Failed to send email. Please try again.");
+        console.log("API Response:", res.data);
       }
-    } catch (error) {
-      toast.error("Error occurred while sending the email.", {
-      });
+    } catch (error: any) {
+      console.error("Error details:", error.response?.data || error.message);
+      toast.error("Error occurred while sending the email.");
     }
-     // Optionally reset form data
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      message: "",
-    });
   };
 
   return (
     <>
-      <div className='min-h-[70vh] px-4 sm:px-6'>
-        <div className='flex flex-col justify-center items-center w-full'>
-          <div className='text-center'>
-            <h1 className='text-3xl font-sans font-bold text-gray-800 mt-10 tracking-wide'>Ready To Connect</h1>
-            <p className='mt-2 font-sans text-sm tracking-tight text-amber-700'>Looking forward to hearing from you</p>
+      <div className="min-h-[70vh] px-4 sm:px-6">
+        <div className="flex flex-col justify-center items-center w-full">
+          <div className="text-center">
+            <h1 className="text-3xl font-sans font-bold text-gray-800 mt-10 tracking-wide">
+              Ready To Connect
+            </h1>
+            <p className="mt-2 font-sans text-sm tracking-tight text-amber-700">
+              Looking forward to hearing from you
+            </p>
           </div>
           <div className="w-full max-w-lg mt-8">
             <form onSubmit={handleSubmit}>
               <div className="flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0">
                 <div className="w-full p-2">
-                  <label className="block text-sm font-light text-amber-600" htmlFor="firstName">*First Name*</label>
+                  <label
+                    className="block text-sm font-light text-amber-600"
+                    htmlFor="firstName"
+                  >
+                    *First Name*
+                  </label>
                   <input
                     type="text"
                     id="firstName"
@@ -72,7 +78,12 @@ function ContactBlock() {
                   />
                 </div>
                 <div className="w-full p-2">
-                  <label className="block text-sm font-light text-amber-600" htmlFor="lastName">*Last Name*</label>
+                  <label
+                    className="block text-sm font-light text-amber-600"
+                    htmlFor="lastName"
+                  >
+                    *Last Name*
+                  </label>
                   <input
                     type="text"
                     id="lastName"
@@ -84,22 +95,32 @@ function ContactBlock() {
                     required
                   />
                 </div>
-                <div className="w-full p-2">
-                  <label className="block text-sm font-light text-amber-600" htmlFor="email">*Email*</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="mt-1 block w-full rounded-md border-gray-500 shadow-md sm:text-sm p-2 text-amber-700 outline-none shadow-stone-400"
-                    placeholder="john@example.com"
-                    required
-                  />
-                </div>
+              </div>
+              <div className="w-full p-2">
+                <label
+                  className="block text-sm font-light text-amber-600"
+                  htmlFor="email"
+                >
+                  *Email*
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="mt-1 block w-full rounded-md border-gray-500 shadow-md sm:text-sm p-2 text-amber-700 outline-none shadow-stone-400"
+                  placeholder="john@example.com"
+                  required
+                />
               </div>
               <div className="mt-4 p-2">
-                <label className="block text-sm font-light text-amber-600" htmlFor="message"> *Message*</label>
+                <label
+                  className="block text-sm font-light text-amber-600"
+                  htmlFor="message"
+                >
+                  *Message*
+                </label>
                 <textarea
                   id="message"
                   name="message"
@@ -122,9 +143,10 @@ function ContactBlock() {
           </div>
         </div>
         <ToastContainer />
+        <ToastContainer />
       </div>
     </>
-  )
+  );
 }
 
 export default ContactBlock;

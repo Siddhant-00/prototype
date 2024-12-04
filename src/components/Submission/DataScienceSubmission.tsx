@@ -55,15 +55,15 @@ const DataScienceSubmission = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 p-8">
-      <h1 className="text-4xl font-bold text-center text-gray-800 mb-10">
+      <h1 className="text-4xl text-headcolor font-bold text-center underline mb-10">
         Data Science Submission
       </h1>
       <div className="space-y-8">
         {submissions.map((submission, index) => (
           <div key={index} className="space-y-4">
             {/* Question */}
-            <h2 className="text-2xl font-semibold text-gray-700">
-              Question {index + 1}: {submission.question}
+            <h2 className="text-2xl font-semibold text-slate-700">
+              <span className="text-gray-700 text-xl">Question {index + 1}:</span>  {submission.question}
             </h2>
             {/* Answer */}
             <p className="text-gray-600">
@@ -78,7 +78,7 @@ const DataScienceSubmission = () => {
               </a>
             </p>
             {/* Horizontal Rule */}
-            <hr className="border-gray-300" />
+            <hr className="border-slate-300 shadow-md" />
           </div>
         ))}
       </div>

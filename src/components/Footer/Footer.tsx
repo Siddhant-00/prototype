@@ -4,6 +4,11 @@ import { motion } from 'framer-motion'
 import {  Github, Linkedin, Mail } from 'lucide-react'
 
 const Footer = () => {
+import React from 'react'
+import { motion } from 'framer-motion'
+import {  Github, Linkedin, Mail } from 'lucide-react'
+
+const Footer = () => {
   return (
     <div>
        <section id="contact" className="text-center bg-gray-500">
@@ -20,6 +25,7 @@ const Footer = () => {
               <motion.a
                 key={label}
                 href={href}
+                target='_blank'
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white p-4 rounded-full shadow-md hover:shadow-lg transition-shadow"
@@ -29,6 +35,7 @@ const Footer = () => {
               </motion.a>
             ))}
           </div>
+        </section>
         </section>
     </div>
   )
