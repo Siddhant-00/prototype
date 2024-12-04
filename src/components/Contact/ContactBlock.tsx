@@ -1,5 +1,8 @@
 "use client"
 import React, { useState } from 'react';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 
 function ContactBlock() {
   const [formData, setFormData] = useState({
@@ -17,10 +20,31 @@ function ContactBlock() {
     }));
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log(formData);
-    // Here you can also add the logic to send the form data to a server
+    try {
+      const res = await axios.post("/api/mail", formData);
+
+
+      if (res.status === 200) {
+        toast.success("Email sent successfully!", {
+        });
+      } else {
+        toast.error("Failed to send email.", {
+        });
+      }
+    } catch (error) {
+      toast.error("Error occurred while sending the email.", {
+      });
+    }
+     // Optionally reset form data
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      message: "",
+    });
   };
 
   return (
@@ -97,6 +121,7 @@ function ContactBlock() {
             </form>
           </div>
         </div>
+        <ToastContainer />
       </div>
     </>
   )
