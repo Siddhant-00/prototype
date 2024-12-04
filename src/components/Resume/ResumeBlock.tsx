@@ -42,7 +42,7 @@ function ResumeBlock() {
     <div className="w-[90%] mx-auto py-12 bg-gradient-to-r from-gray-50 to-slate-100 rounded-lg shadow-xl mt-8 mb-8">
       <div className="w-[88%] mx-auto">
         <header className="text-center">
-          <h1 className="text-4xl font-extrabold text-transparent bg-clip-text text-gray-700 ">
+          <h1 className="text-4xl font-extrabold text-transparent bg-clip-text text-gray-900 ">
             My Resume
           </h1>
           <p className="text-lg mt-4 text-gray-700 font-medium">
