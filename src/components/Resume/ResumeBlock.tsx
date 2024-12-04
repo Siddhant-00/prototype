@@ -1,40 +1,40 @@
-import React from 'react';
+import React from "react";
 
 const Edu = [
   {
     time: "2019 - 2020",
     heading: "10th Grade",
-    para: "Jawahar Navodaya Vidhyalaya, Jabalpur"
+    para: "Jawahar Navodaya Vidhyalaya, Jabalpur",
   },
   {
     time: "2021 - 2022",
     heading: "12th Grade",
-    para: "Jawahar Navodaya Vidhyalaya, Jabalpur"
+    para: "Jawahar Navodaya Vidhyalaya, Jabalpur",
   },
   {
     time: "2022 - 2027",
     heading: "Graduation/Masters",
-    para: "International Institute of Professional Studies, DAVV, Indore"
+    para: "International Institute of Professional Studies, DAVV, Indore",
   },
 ];
 
 const Skill = [
-  'C/C++',
-  'Java',
-  'Python',
+  "C/C++",
+  "Java",
+  "Python",
   "Data Analysis & Statistics",
-  'MySql/MongoDB (DBMS)'
+  "MySql/MongoDB (DBMS)",
 ];
 
 const CoCir = [
-  'Google Cloud Study Jam Program, 2023, Certificate Holder, VAC IOT Course',
-  'Sports (Cricket)/Fitness Enthusiast'
+  "Google Cloud Study Jam Program, 2023, Certificate Holder, VAC IOT Course",
+  "Sports (Cricket)/Fitness Enthusiast",
 ];
 
 const Lang = [
   "English - Fluent",
   "Hindi - Native",
-  "Understanding in French"
+  "Understanding in French",
 ];
 
 function ResumeBlock() {
@@ -42,7 +42,7 @@ function ResumeBlock() {
     <div className="w-[90%] mx-auto py-12 bg-gradient-to-r from-gray-50 to-slate-100 rounded-lg shadow-xl mt-8 mb-8">
       <div className="w-[88%] mx-auto">
         <header className="text-center">
-          <h1 className="text-4xl font-extrabold text-transparent bg-clip-text text-gray-700 ">
+          <h1 className="text-4xl font-extrabold text-transparent bg-clip-text text-gray-700">
             My Resume
           </h1>
           <p className="text-lg mt-4 text-gray-700 font-medium">
@@ -50,6 +50,7 @@ function ResumeBlock() {
           </p>
         </header>
 
+        {/* Education Section */}
         <section className="mt-10">
           <h2 className="text-2xl font-bold text-gray-800 border-b-4 border-purple-400 inline-block mb-6">
             Education
@@ -68,6 +69,7 @@ function ResumeBlock() {
           </div>
         </section>
 
+        {/* Skills Section */}
         <section className="mt-12">
           <h2 className="text-2xl font-bold text-gray-800 border-b-4 border-blue-400 inline-block mb-6">
             Skills & Expertise
@@ -84,6 +86,7 @@ function ResumeBlock() {
           </ul>
         </section>
 
+        {/* Co-Curriculars Section */}
         <section className="mt-12">
           <h2 className="text-2xl font-bold text-gray-800 border-b-4 border-purple-400 inline-block mb-6">
             Co-Curriculars
@@ -101,6 +104,7 @@ function ResumeBlock() {
           </ul>
         </section>
 
+        {/* Languages Section */}
         <section className="mt-12">
           <h2 className="text-2xl font-bold text-gray-800 border-b-4 border-blue-400 inline-block mb-6">
             Languages

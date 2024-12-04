@@ -4,6 +4,11 @@ import { motion } from 'framer-motion'
 import {  Github, Linkedin, Mail } from 'lucide-react'
 
 const Footer = () => {
+import React from 'react'
+import { motion } from 'framer-motion'
+import {  Github, Linkedin, Mail } from 'lucide-react'
+
+const Footer = () => {
   return (
     <div>
        <section id="contact" className="text-center bg-gray-500">
@@ -30,6 +35,7 @@ const Footer = () => {
               </motion.a>
             ))}
           </div>
+        </section>
         </section>
     </div>
   )
