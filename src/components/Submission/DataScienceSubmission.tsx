@@ -41,15 +41,15 @@ const DataScienceSubmission = () => {
     },
     {
       question: "Dimension Reduction",
-      answer: "https://www.youtube.com/watch?v=KMpOJQ7s5D0",
+      answer: "https://youtu.be/DS7mK9ZyHyw?feature=shared",
     },
     {
       question: "Logistic Regression Modeling",
-      answer: "https://www.youtube.com/watch?v=ZH8PCT6TgoA",
+      answer: "https://youtu.be/eZB_iy1QykI?feature=shared",
     },
     {
       question: "Assosciation Rules",
-      answer: "https://www.youtube.com/watch?v=1PYcW-7fPSE",
+      answer: "https://youtu.be/1aIvxDIjPJE?feature=shared",
     },
   ];
 
